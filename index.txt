@@ -1,0 +1,100 @@
+= 测试文档
+钟鉴新 <azuwis@gmail.com>
+v1.0, 2013-04-19
+:toc:
+
+== 测试章节
+
+=== 文字强调
+
+支持对__文字__的*强调*
+
+=== 图片
+
+image::_static/pulpit.jpg[]
+
+image::http://www.w3schools.com/images/pulpit.jpg[]
+
+=== 链接
+
+http://example.com
+
+This is a http://example.com[link]
+
+这是一个 http://example.com[链接]
+
+[NOTE]
+中文链接问题
+
+=== 代码段
+
+ruby代码样例
+
+[source,ruby]
+----
+#!/usr/bin/ruby
+class Person
+  attr_reader :name, :age
+  def initialize(name, age)
+    @name, @age = name, age
+  end
+  def <=>(person) # Comparison operator for sorting
+    age <=> person.age
+  end
+  def to_s
+    "#{name} (#{age})"
+  end
+end
+
+# 中文注释
+group = [
+  Person.new("Bob", 33),
+  Person.new("Chris", 16),
+  Person.new("Ash", 23)
+]
+
+puts group.sort.reverse
+----
+
+java代码样例
+
+[source,java]
+----
+// Hello.java
+import java.io.*;
+import javax.servlet.*;
+
+public class Hello extends GenericServlet {
+    public void service(final ServletRequest request, final ServletResponse response)
+    throws ServletException, IOException {
+        response.setContentType("text/html");
+        final PrintWriter pw = response.getWriter();
+        try {
+            pw.println("Hello, world!");
+        } finally {
+            pw.close();
+        }
+    }
+}
+----
+
+=== 自动生成目录
+
+见生成的HTML及PDF
+
+=== 锚点跳转
+
+见生成的HTML及PDF
+
+=== 表格
+
+[width="50%",options="header"]
+|=========
+|中文|表格
+|测试|测试
+|测试|测试
+|=========
+
+=== CSS样式
+
+`--theme=THEME` 指定CSS样式
